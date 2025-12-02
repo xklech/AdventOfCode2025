@@ -27,15 +27,18 @@ pub fn part_two(input: &str) -> Option<u64> {
         if number >= 100 {
             println!("Large rotation detected: {}", number);
         }
+        let original_position = position;
         let num_rotations = number / 100;
         counter += num_rotations as u64;
         let rotation_reminder = number % 100;
         position  += if line.starts_with('L') { -1 } else { 1 } * rotation_reminder;
-        if position < 0 {
-            counter += if num_rotations > 0 { 0 } else { 1 };
+        if position == 0 {
+            counter += 1;
+        } else if position < 0 {
+            counter += if (original_position == 0) { 0 } else { 1 };
             position = 100 - position.abs();
         } else if position > 99 {
-            counter += if num_rotations > 0 { 0 } else { 1 };
+            counter += 1;
             position = position % 100;
         }
         println!("Current position: {}", position);
