@@ -1,5 +1,3 @@
-use core::num;
-
 advent_of_code::solution!(1);
 
 pub fn part_one(input: &str) -> Option<u64> {
@@ -37,7 +35,7 @@ pub fn part_two(input: &str) -> Option<u64> {
             counter += if num_rotations > 0 { 0 } else { 1 };
             position = 100 - position.abs();
         } else if position > 99 {
-            counter += if num_rotations > 0 { 0 } else { 1 };;
+            counter += if num_rotations > 0 { 0 } else { 1 };
             position = position % 100;
         }
         println!("Current position: {}", position);

@@ -11,7 +11,7 @@ pub fn part_one(input: &str) -> Option<u64> {
         let end: u64 = splitted[1].parse().unwrap();
         println!("Start: {}, End: {}", start, end);
 
-        for(num) in start..=end {
+        for num in start..=end {
             let str_num = num.to_string();
             let halfs = str_num.split_at(str_num.len() / 2);
             if halfs.0 == halfs.1  {
@@ -32,7 +32,7 @@ pub fn part_two(input: &str) -> Option<u64> {
         let end: u64 = splitted[1].parse().unwrap();
         println!("Start: {}, End: {}", start, end);
 
-        for(num) in start..=end {
+        for num  in start..=end {
             let num_str = num.to_string();
             for i in 1..(num_str.len()/2)+1 {
                 let part = &num_str[0..i];
