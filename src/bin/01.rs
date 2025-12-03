@@ -35,7 +35,7 @@ pub fn part_two(input: &str) -> Option<u64> {
         if position == 0 {
             counter += 1;
         } else if position < 0 {
-            counter += if (original_position == 0) { 0 } else { 1 };
+            counter += if original_position == 0 { 0 } else { 1 };
             position = 100 - position.abs();
         } else if position > 99 {
             counter += 1;
